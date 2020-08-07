@@ -1,0 +1,57 @@
+name: Gallery Theme
+slug: gallery-theme
+type: theme
+version: 0.1.0
+description: Gallery theme with central image storage
+icon: rebel
+author:
+  name: Andy Stiller
+  email: andy@andyhat.co.uk
+homepage: https://github.com/andy-stiller/grav-theme-gallery-theme
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/andystiller/grav-theme-gallery-theme/issues
+readme: https://github.com/andystiller/grav-theme-gallery-theme/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in Menu
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
+    
+    blog_section:
+            type: section
+            title: Blog Defaults
+            underline: true
+      
+    blog-page:
+            type: text
+            label: Blog Page
+            help: The route to the blog page when working with blog sidebar
+            size: medium
+            default: '/blog'
+    
+    gallery_section:
+            type: section
+            title: Gallery Defaults
+            underline: true
+        
+    images-foler:
+            type: text
+            label: Images Folder
+            help: The route to the images folder
+            size: medium
+            default: 'images'
+      
