@@ -48,10 +48,10 @@ form:
             title: Gallery Defaults
             underline: true
         
-    images-foler:
+    images-folder:
             type: text
             label: Images Folder
             help: The route to the images folder
             size: medium
-            default: 'images'
+            default: '/images'
       
