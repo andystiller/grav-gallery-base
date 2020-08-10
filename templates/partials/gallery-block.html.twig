@@ -1,0 +1,16 @@
+{% set imagesfolder = page.find(header_var('images_folder')|defined(theme_var('images-folder'))) %}
+
+{{ dump(imagesfolder)}}
+<div class="gallery-grid clearfix">
+{% for image_name in page.header.gallery %}
+    {% set image = imagesfolder.media[image_name.image] %}
+    <figure style="width: {{ image.meta.thumb_width }}" class="gallery-grid-item albumimage">
+        {{ image.cropResize(310,200).html( image.meta.title ,image.meta.alt_text) }}
+        {% if image.meta.title %}
+        <figcaption class="image-info">
+            {{ image.meta.title }}
+        </figcaption>
+        {% endif %}
+    </figure>
+{% endfor %}
+</div>
