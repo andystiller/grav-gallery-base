@@ -3,7 +3,7 @@
 <div class="gallery-grid clearfix">
 {% for image_name in page.header.gallery %}
     {% set image = imagesfolder.media[image_name.image] %}
-    <figure style="width: {{ image.meta.thumb_width }}" class="gallery-grid-item albumimage">
+    <figure class="gallery-grid-item albumimage">
         {{ image.cropResize(310,200).html( image.meta.title ,image.meta.alt_text) }}
         {% if image.meta.title %}
         <figcaption class="image-info">
